@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1> Roster for course:</h1>
+{% if view == "1" %}
+    <div>
+            {% for student in class_roster %}
+                <li>
+                    {{student[0]}} has a grade of {{student[1]}}
+                </li>
+            {% endfor %}
+
+        {% elif view == "2" %}
+            {% for student in class_roster %}
+                <li>
+                    {{student[0]}} is a {{student[2]}}
+                </li>
+            {% endfor %}
+
+        {% elif view == "0" %}
+            {% for student in class_roster %}
+                <li>
+                    {{student[0]}} is a {{student[2]}} and has a grade of {{student[1]}}
+                </li>
+            {% endfor %}
+        {% else %}
+            <p> Please enter a value</p>
+    </div>
+{% endif %}
+{% endblock %}
